@@ -15,6 +15,9 @@ All scripts are functional as of August 5th, 2018.
 # Disclaimer
 Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) reserve the rights to the data and Web API. I only own the scripts to mine the data and analyse it. 
 
+# Usage/minimum working example
+
+
 
 
 
