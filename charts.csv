@@ -1,0 +1,13 @@
+Chart, url,startWeek
+hot_100,https://www.billboard.com/charts/hot-100,1958-08-04
+pop,https://www.billboard.com/charts/pop-songs,1992-10-03
+hot_dance,https://www.billboard.com/charts/dance-electronic-songs,2013-01-26
+club_dance,https://www.billboard.com/charts/dance-club-play-songs,1976-10-28
+rnb_hip_pop,https://www.billboard.com/charts/r-b-hip-hop-songs,1958-10-20
+hot_latin,https://www.billboard.com/charts/latin-songs,1986-09-06
+radio_songs,https://www.billboard.com/charts/radio-songs,1990-11-03
+digital_songs,https://www.billboard.com/charts/digital-song-sales,2004-10-30
+streaming_songs,https://www.billboard.com/charts/streaming-songs,2013-01-26
+hot_dance_airplay,https://www.billboard.com/charts/hot-dance-airplay,2003-08-16
+smooth_jazz,https://www.billboard.com/charts/jazz-songs,2005-10-22
+UK_top_40,https://www.billboard.com/charts/official-uk-songs,2011-01-29
