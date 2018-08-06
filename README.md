@@ -2,7 +2,7 @@
 A web scarping scripts written in R to text-mine multiple Billboard musical charts to identify popular Top 40 songs, and add them to Spotify playlists.
 
 # What is the problem?
-I love music! I mostly listen to Top 40 songs; however, it is increasing becoming difficult for me to discover new music due to time constrains. There is no shortage of top musical charts on radio and streaming apps such as Spotify, but popular songs tend to be repeated in these charts, leaving little room to discover newer, non-repeated Top 40 songs. 
+I love music; however, it is increasing becoming difficult for me to discover new music due to time constrains. There is no shortage of top musical charts on radio and streaming apps such as Spotify, but popular songs tend to be repeated in these charts, leaving little room to rapidly discover newer, non-repeated Top 40 songs. 
 
 The aim of this project is to automatically compile a monthly playlists of songs that were in top 40 for a given month, and not repeated in previous months. Furthermore, it provides tools to add the songs/playlists to a user's Spotify account. 
 
