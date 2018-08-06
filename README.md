@@ -4,7 +4,7 @@ Web scarping scripts written in R to download multiple Billboard musical charts 
 # What is the problem?
 I love music! I mostly listen to Top 40 songs; however, it is increasing becoming difficult for me to discover new music due to time constrains. There is no shortage of top musical charts on radio and streaming apps such as Spotify, but popular songs tend to be repeated in these charts, leaving little room to discover newer, non-repeated Top 40 songs. 
 
-The aim of this project is to compile a monthly list of songs that were in top 40 for a given month, and not repeated in previous months. 
+The aim of this project is to automatically compile a monthly list of songs that were in top 40 for a given month, and not repeated in previous months. 
 
 # Approach
 1. Use R to web scrape multiple billboard charts (https://www.billboard.com/charts) to prepare a data frame consisting of ranking of songs in multiple charts ([Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)). 
