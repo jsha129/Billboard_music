@@ -1,5 +1,5 @@
 # SpotifyR
-A web scarping scripts written in R to text-mine multiple Billboard musical charts to identify popular Top 40 songs, and add them to Spotify playlists.
+A web scraping script written in R to text-mine multiple Billboard musical charts to identify popular Top 40 songs, and add them to a user's Spotify account.
 
 # What is the problem?
 I love music; however, it is increasing becoming difficult for me to discover new music due to time constrains. There is no shortage of top musical charts on radio and streaming apps such as Spotify, but popular songs tend to be repeated in these charts, leaving little room to rapidly discover newer, non-repeated Top 40 songs. 
