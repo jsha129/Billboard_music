@@ -17,9 +17,7 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
 
 # Usage/minimum working example
 1. Determine the charts to web scrape and add them to charts.csv with name and url. I put all charts in this file and provided a way to filter a subset of charts in the Mining_script_V1.R (step 2).
-2. Install necessary packages etc in R and run Mining_script_V1.R. This R script has CSS field names used for web scraping as well as function for data wrangling, and tunable parameters for defining time period in years to webscrape. 
-
-For convention, data for each chart is exported to 'Raw_charts/' folder. By default, this folder contains 'empty_headers.csv' for copying file structure for new charts. 
+2. Install necessary packages etc in R and run Mining_script_V1.R. This R script has CSS field names used for web scraping as well as function for data wrangling, and tunable parameters for defining time period in years to webscrape. For convention, data for each chart is exported to 'Raw_charts/' folder. By default, this folder contains 'empty_headers.csv' for copying file structure. 
 3. Run Songs_analysis_3.R to rank each song and export monthly charts (in 'Monthly_charts' folder).
 4. To add songs on Spotify using Web API, register an app on Spotify and the website will create 'key' and 'secret' for you. Add them in the Rspotify.R. 
 
