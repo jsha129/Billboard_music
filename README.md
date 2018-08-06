@@ -26,5 +26,5 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
 # Additional comments and limitations
 - While ranking each song, I only used artist_song as unique IDs and ignored chart names. This approach has a benefit that songs appearing in multiple charts will have a higher value for number of weeks than those who only appear in specific charts. For example, let's say, a latin song  appears in respective latin music chart. If the same song spreads to mainstream music, it could appear in 'hot 100' or other charts, and the script will consider data from other charts to calculate 'number of weeks' parameter.
 - First appearance of a song dictactes which monthly chart it will reported in. Many songs take 3-4 weeks to be in Top 40; however, the script will only use its first appearance in Billboard top 100 or whatever chart you are using, regardless of its ranking in the opening week, to export it in monthly charts.
-- Because this algorithm emphasises on  popular music, it needs at least a month of data and is not suitable to discover trending or viral songs. 
+- Because this algorithm emphasises on  popular music, it needs at least a month of data for reliable prediction and is not suitable to discover trending or viral songs. 
 - Feedback is much appreciated. Thank you. 
