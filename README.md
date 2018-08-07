@@ -57,6 +57,8 @@ Run following files in the order indicated.
   ```
   
   [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R) should export monthly charts.
+  
+  
   3. Add songs to Spotify. 
   First, register an app on Spotify Web API to get your client and secret codes. You don't actually have to write an app to do so; you just need those codes to access ID of songs and playlists from the R script. 
   You will also need to get your spotify id, which is easily doable from the spotify App.
