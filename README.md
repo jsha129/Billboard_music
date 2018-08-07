@@ -19,13 +19,12 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
 
 # Usage/minimum working example
 **Identification top 10 songs of 2016 and 2017.**
+- [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
+  `startYear <- 2016
+  stopYear <- 2017`
 
 1. Determine the charts to web scrape and add them to [charts.csv](https://github.com/jsha129/Billboard_music/blob/master/charts.csv) with name and url. I put all charts in this file and provided a way to filter a subset of charts in the [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R) (step 2).
 2. Install necessary packages etc in R and run [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R). This R script has CSS field names used for web scraping as well as function for data wrangling, and tunable parameters for defining time period in years to webscrape. For convention, data for each chart is exported to **Raw_charts** folder. By default, this folder contains [empty_headers.csv](https://github.com/jsha129/Billboard_music/blob/master/Raw_charts/empty_headers.csv) for copying file structure. 
-
-startYear <- 2016
-stopYear <- 2017
-
 3. Run [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R) to rank each song and export monthly charts (in **Monthly_charts** folder).
 4. To add songs on Spotify using Web API, register an app on Spotify and the website will create 'client' and 'secret' codes for you. Add them in the [Rspotify.R](https://github.com/jsha129/Billboard_music/blob/master/Rspotify.R). 
 
