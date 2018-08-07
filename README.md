@@ -26,15 +26,18 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
 # Minimal working example
 **Identification top 10 songs of 2016 and 2017 from the Billboard top 100 chart.**
 (Change Parameters as required)
-- [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
+1. [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
   
   ```r
   charts <- read.csv("charts.csv")
   selected_charts <- c("hot_100")
   charts <- subset(charts, Chart %in% selected_charts)
   startYear <- 2016
-  stopYear <- 2017
+  stopYear <- 2017 
+  ```
   
+  2.  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R)
+  ```r
   
   ```
 
