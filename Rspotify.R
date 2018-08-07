@@ -76,15 +76,18 @@ token <- oauth2.0_token(spotifyR, myapp,scope = Reduce(paste, scopes))
 ## Can above authication allow to add songs to an alubm? A: Not in Terminal through curl or in R. but yes on web api.
 # https://developer.spotify.com/console/post-playlist-tracks/
 
-playlist <- "2018"
-# data <- read.csv(paste0("Monthly_charts/", playlist,".csv"))
 data <- read.csv("ALL_SONGS_2016_hot_100_ranked.csv")
 spotifyURIs <- try(getSongIDs(data))
 
+# Create a playlist on Spotify App MANUALLY, and store itss name in 'playlist' variable.
+# Following functions fetches the spotify's id for the playlist you just created. 
+playlist <- "2018"
 my_getPlaylist(playlist)
 
 # Can't add more than 100 songs at a time. Printing 100 songs at a time
+# songs ids
 print(spotifyURIs)
+# Access tokens for the Web API.
 print(token[["credentials"]][["access_token"]])
 
 
