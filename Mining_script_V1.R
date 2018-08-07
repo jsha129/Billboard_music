@@ -1,7 +1,3 @@
-# similar script to the python script_all_years.
-# Major logic change: Instead of looping by weeks first (i), this version searches by chart name, gets missing weeks from the exisiting file with existing data and only fetches charts that were missing weeks.
-
-
 rm (list = ls())
 ### -- Preset
 library(rvest)
@@ -92,15 +88,13 @@ cleanStr <- function(text){
 
 
 ### -- Start
-small_url = "https://www.billboard.com/charts/hot-100/1990-01-01"
 charts <- read.csv("charts.csv")
 # selected_charts <- c("hot_100", "pop", "hot_dance", "club_dance", "radio_songs", 
 #                      "digital_songs", "streaming_songs", "hot_dance_airplay", "UK_top_40")
-selected_charts <- c("hot_100", "club_dance", "smooth_jazz", "pop",  "hot_latin")
+selected_charts <- c("hot_100")
 charts <- subset(charts, Chart %in% selected_charts)
-startYear <- 1980
-stopYear <- 2018
-
+startYear <- 2016
+stopYear <- 2017
 
 # week_list <- as.character(today("US/Pacific") - 1) # NA here will allow all weeks in the for loop, otherwise specify a particular week here
 for(i_chart in 1:nrow(charts)){
@@ -133,12 +127,10 @@ for(i_chart in 1:nrow(charts)){
   
   for(week in week_list){
     try(fetchSongs(week, category = current_chart, printUrl = F,
-               filename = filename))
+                   filename = filename))
     print(week) # After the data has been fetched to make sure previous threasd was successful
   }
   print(paste(current_chart, "completed"))
   
 }
 
-# webpage <- read_html(small_url)
-# print(html_text(html_nodes(webpage, css_song_rank)))
