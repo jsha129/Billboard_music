@@ -38,7 +38,19 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
   
   2.  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R)
   ```r
-  
+  year <- 2016
+  month <- 1 # start month for exporting playlists
+  num.top.songs <- 50 # Tells how many unique songs to write to a file after removing duplicates
+  min_median <- 20 # median rank a song has to be in top 30
+
+  rank_songs(inputFile = inputs,
+           output = out,
+           minYear = 2016, maxYear = 2017, 
+           numWeeks = 0.9, # select songs that has 'numWeeks' in 90th percentile, ie appeared in top 10% of numWeek score
+           minMedian = 10,
+           presortMinRank = 20) 
+           # PresortMinRank keeps only songs that were less than this number before ranking begins; helps speed up matrix calculations when dealing with lots of data.
+
   ```
 
 # Additional comments and limitations
