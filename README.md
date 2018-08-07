@@ -52,6 +52,38 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
            # PresortMinRank keeps only songs that were less than this number before ranking begins; helps speed up matrix calculations when dealing with lots of data.
 
   ```
+  3. Add songs to Spotify. 
+  First, register an app on Spotify Web API to get your client and secret codes. You don't actually have to write an app to do so; you just need those codes to access ID of songs and playlists from the R script. 
+  You will also need to get your spotify id, which is easily doable from the spotify App.
+  
+  ```r
+  user_id <<- ""
+  client <<- ""
+  secret <<- ""
+  ```
+  Once the authentication is successful, go to https://developer.spotify.com/console/post-playlist-tracks/ to add songs and fill in user_name.
+  
+  Next, create a playlist MANUALLY in Spotify App where you want to add songs, and store the name in a variable (see code below).
+  
+  Following code will print out the playlist id, and spotify id for each songs. Fill them on the Web API. 
+  
+  ```r
+  data <- read.csv("Monthly_charts/ALL_SONGS_2016_hot_100_ranked.csv")
+spotifyURIs <- try(getSongIDs(data))
+
+# Create a playlist on Spotify App MANUALLY, and store itss name in 'playlist' variable.
+# Following functions fetches the spotify's id for the playlist you just created. 
+playlist <- "2018"
+my_getPlaylist(playlist)
+
+# Can't add more than 100 songs at a time. Printing 100 songs at a time
+# songs ids, paste them on WEB API
+print(spotifyURIs)
+# Access tokens for the Web API.
+print(token[["credentials"]][["access_token"]])
+  ```
+  
+  Click 'Try it!'. It should be done now!
 
 # Additional comments and limitations
 - While ranking each song, I only used artist_song as unique IDs and ignored chart names. This approach has a benefit that songs appearing in multiple charts will have a higher value for number of weeks than those who only appear in specific charts. For example, let's say, a latin song  appears in respective latin music chart. If the same song spreads to mainstream music, it could appear in 'hot 100' or other charts, and the script will consider data from other charts to calculate 'number of weeks' parameter.
