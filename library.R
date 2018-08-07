@@ -7,13 +7,13 @@ rank_songs <- function(inputFile = "2018_hot_club.csv",
   # minimum number of weeks that a song is listed in top 100. Highly ranked songs spend roughtly 10-16 weeks in top 100 charts.
   
   df <- read.csv(inputFile, stringsAsFactors = F, row.names = NULL)
-  df$Unique <- paste(df$Artist, df$Song, sep =" - ") # original
-  # df$Rank <- as.numeric(df$Rank)
+  df$Unique <- trimws(paste(df$Artist, df$Song, sep =" - "), which = "both") # original
   # df$Unique <- paste(df$Artist, df$Song, df$Category,sep =" - ") # works too, but opted for above
-  
   # matrix of songs vs rangking
   library(reshape2)
   df.backup <- df
+  
+  
   df <- subset(df, year(as.Date(df$Week)) >= minYear & year(as.Date(df$Week)) <= maxYear & Rank <= presortMinRank)
   df <- df[, c("Rank","Unique","Week", "Category")]
   df$Unique <- trimws(df$Unique)
@@ -22,9 +22,9 @@ rank_songs <- function(inputFile = "2018_hot_club.csv",
   # 2017 songs
   # df <- df[grep("/17", df$Week),]
   df <- droplevels(df)
-  
+
   # mat.songs <- acast(df, Unique ~ Week, value.var = "Rank") # works too, opted for below. ategory already in the 'Unique'
-  mat.songs <- acast(df, Unique ~ Week + Category, value.var = "Rank") # original, this merges number of weeks in ALL charts, so a song can have high num_weeks in a short time after release if appreared on multiple charts
+  mat.songs <- acast(df, Unique ~ Week + Category, value.var = "Rank", fun.aggregate = median) # original, this merges number of weeks in ALL charts, so a song can have high num_weeks in a short time after release if appreared on multiple charts
   median.mat.songs <- apply(mat.songs, 1, median, na.rm = T, na.omit = T)
   # median.mat.songs <- sort(median.mat.songs)
   
@@ -44,8 +44,6 @@ rank_songs <- function(inputFile = "2018_hot_club.csv",
   if(!is.na(minMedian)){
     songs <- subset(songs, Median_Rank <= minMedian)
   }
-  
-  
   final <- merge(songs, df, by.x ="Artist_Song", by.y = "Unique")
   final <- final[order(final$Week, decreasing = F),]
   final <- subset(final, !duplicated(final$Artist_Song), -4)
