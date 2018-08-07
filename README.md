@@ -17,16 +17,20 @@ All scripts are functional as of August 5th, 2018.
 # Disclaimer
 Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) reserve the rights to the data and Web API. I only own the scripts to mine the data and analyse it. 
 
-# Usage/minimum working example
-**Identification top 10 songs of 2016 and 2017.**
-- [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
-  `startYear <- 2016
-  stopYear <- 2017`
-
+# Usage
 1. Determine the charts to web scrape and add them to [charts.csv](https://github.com/jsha129/Billboard_music/blob/master/charts.csv) with name and url. I put all charts in this file and provided a way to filter a subset of charts in the [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R) (step 2).
 2. Install necessary packages etc in R and run [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R). This R script has CSS field names used for web scraping as well as function for data wrangling, and tunable parameters for defining time period in years to webscrape. For convention, data for each chart is exported to **Raw_charts** folder. By default, this folder contains [empty_headers.csv](https://github.com/jsha129/Billboard_music/blob/master/Raw_charts/empty_headers.csv) for copying file structure. 
 3. Run [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R) to rank each song and export monthly charts (in **Monthly_charts** folder).
 4. To add songs on Spotify using Web API, register an app on Spotify and the website will create 'client' and 'secret' codes for you. Add them in the [Rspotify.R](https://github.com/jsha129/Billboard_music/blob/master/Rspotify.R). 
+
+# Minimal working example
+**Identification top 10 songs of 2016 and 2017.**
+(Change Parameters as required)
+- [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
+  
+  `startYear <- 2016
+    
+  stopYear <- 2017`
 
 # Additional comments and limitations
 - While ranking each song, I only used artist_song as unique IDs and ignored chart names. This approach has a benefit that songs appearing in multiple charts will have a higher value for number of weeks than those who only appear in specific charts. For example, let's say, a latin song  appears in respective latin music chart. If the same song spreads to mainstream music, it could appear in 'hot 100' or other charts, and the script will consider data from other charts to calculate 'number of weeks' parameter.
