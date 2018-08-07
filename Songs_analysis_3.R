@@ -28,7 +28,7 @@ ALL <- do.call(rbind, lapply(paste0(path,f), read.csv)) #
 ALL <- dplyr::distinct(ALL)
 write.csv(ALL[,1:5], paste0(path,"ALL_SONGS.csv"), row.names = F)
 
-year <- 1990
+year <- 2016
 month <- 1 # start month for exporting playlists
 num.top.songs <- 50 # Tells how many unique songs to write to a file after removing duplicates
 min_median <- 20 # median rank a song has to be in top 30
