@@ -25,7 +25,10 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
 
 # Minimal working example
 **Identification top 10 songs of 2016 and 2017 from the Billboard top 100 chart.**
-(Change Parameters as required)
+
+All files should have following parameters. Change them if necessary. 
+
+Run following files in the order indicated. 
 1. [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
   
   ```r
@@ -52,6 +55,8 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
            # PresortMinRank keeps only songs that were less than this number before ranking begins; helps speed up matrix calculations when dealing with lots of data.
 
   ```
+  
+  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R) should export monthly charts.
   3. Add songs to Spotify. 
   First, register an app on Spotify Web API to get your client and secret codes. You don't actually have to write an app to do so; you just need those codes to access ID of songs and playlists from the R script. 
   You will also need to get your spotify id, which is easily doable from the spotify App.
