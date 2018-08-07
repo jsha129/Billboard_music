@@ -1,4 +1,15 @@
 rm (list = ls())
+### Required packages
+install.packages("rvest")
+install.packages("lubridate")
+install.packages("data.table")
+install.packages("dplyr")
+install.packages("httr")
+install.packages("dplyr")
+install.packages("reshape2")
+install.packages("devtools")
+install_github("tiagomendesdantas/Rspotify")
+
 ### -- Preset
 library(rvest)
 library(lubridate)
