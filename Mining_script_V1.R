@@ -1,18 +1,12 @@
 rm (list = ls())
 ### Required packages
-install.packages("rvest")
-install.packages("lubridate")
-install.packages("data.table")
-install.packages("dplyr")
-install.packages("httr")
-install.packages("dplyr")
-install.packages("reshape2")
-install.packages("devtools")
-install_github("tiagomendesdantas/Rspotify")
+list.of.packages <- c("rvest", "lubridate", "data.table", "dplyr", "httr", "reshape2", "devtools", "Rspotify")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) {install.packages(new.packages)}
+if(!any(grep("Rspotify", installed.packages()))){install_github("tiagomendesdantas/Rspotify")}
 
-### -- Preset
-library(rvest)
-library(lubridate)
+### -- Preset, loads all of above packages
+lapply(list.of.packages, require, character.only = TRUE)
 
 # - define variables for CSS
 css_no1_song <- ".chart-number-one__title"
