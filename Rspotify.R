@@ -42,21 +42,12 @@ getSongIDs <- function(df){
     temp_song <- trimws(temp_str[[1]][2])
     temp_artist <- trimws(temp_str[[1]][1])
     temp_artist <- trimws(strsplit(temp_artist, " ")[[1]][1]) # having entire artist name is too specific, gives NA later
-    # print(df[i,"Artist_Song"])
-    # print(paste0("Song:", temp_song, ", Artist: ", temp_artist))
-    # print(temp_str)
-    temp_return <- searchTrack(paste(temp_artist, temp_song), token) # does not include artist yet
+    temp_return <- try(searchTrack(paste(temp_artist, temp_song), token)) # does not include artist yet
     if(nrow(temp_return) >0){
-      # include artist name in result df
-      # temp_return <- temp_return[grep(temp_artist, temp_return$artists),]
-      # only return a song with maximum popularity
-      # temp_return <- temp_return[order(temp_return$popularity, decreasing = T),]
       return(as.vector(temp_return[1,"id"]))
     } else {
       return(NA)
     }
-    
-    # print(temp_return)
   })
   # analysis
   if(anyNA(ids)){
@@ -72,9 +63,9 @@ getSongIDs <- function(df){
 ## --
 
 ## Authication. 'authorization flow'
-user_id <<- "" # YOUR username
-client <<- "" # YOUR client id
-secret <<- "" # YOUR Secret
+user_id <<- ""
+client <<- ""
+secret <<- ""
 
 spotifyR <- oauth_endpoint(
   authorize = "https://accounts.spotify.com/authorize",
@@ -87,10 +78,12 @@ token <- oauth2.0_token(spotifyR, myapp,scope = Reduce(paste, scopes))
 
 playlist <- "2018"
 # data <- read.csv(paste0("Monthly_charts/", playlist,".csv"))
-data <- read.csv("Monthly_charts/yearly_2018.csv")
-spotifyURIs <- getSongIDs(data)
+data <- read.csv("ALL_SONGS_2016_hot_100_ranked.csv")
+spotifyURIs <- try(getSongIDs(data))
 
 my_getPlaylist(playlist)
+
+# Can't add more than 100 songs at a time. Printing 100 songs at a time
 print(spotifyURIs)
 print(token[["credentials"]][["access_token"]])
 
