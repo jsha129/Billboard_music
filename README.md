@@ -100,6 +100,10 @@ print(token[["credentials"]][["access_token"]])
   ```
   
   Click 'Try it!'. It should be done now!
+  
+### Output
+(above code ran using my credentials). 
+(/Rspotify_output.png)
 
 # Additional comments and limitations
 - While ranking each song, I only used artist_song as unique IDs and ignored chart names. This approach has a benefit that songs appearing in multiple charts will have a higher value for number of weeks than those who only appear in specific charts. For example, let's say, a latin song  appears in respective latin music chart. If the same song spreads to mainstream music, it could appear in 'hot 100' or other charts, and the script will consider data from other charts to calculate 'number of weeks' parameter.
