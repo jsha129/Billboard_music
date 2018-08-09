@@ -65,7 +65,7 @@ Run following files in the order indicated.
 
 ![GitHub Logo](https://github.com/jsha129/SpotifyR/blob/master/Songs_ranked.png)
 
-3. Monthly charts exported based on above criteria to 
+3. 33 Monthly charts exported based on above criteria to [/Monthly_charts](/Monthly_charts).
   
   
   3. Add songs to Spotify. 
