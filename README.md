@@ -62,6 +62,9 @@ Run following files in the order indicated.
 ## Output
 1. All selected charts were merged in one file, [Raw_charts/ALL_SONGS.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_SONGS.csv).
 2. Songs ranked [Raw_charts/ALL_SONGS_2016_hot_100_ranked.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_SONGS_2016_hot_100_ranked.csv).
+
+![GitHub Logo](https://github.com/jsha129/SpotifyR/blob/master/Songs_ranked.png)
+
 3. Monthly charts exported based on above criteria to 
   
   
