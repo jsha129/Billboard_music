@@ -38,8 +38,9 @@ Run following files in the order indicated.
   startYear <- 2016
   stopYear <- 2017 
   ```
-  
-  **Output:** 105 weeks mined ([Mining_script_V1.log](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.log)). Data exported to [Raw_charts/ALL_hot_100.csv]().
+  ## Output
+ - 105 weeks mined ([Mining_script_V1.log](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.log)). 
+ - Data exported to [Raw_charts/ALL_hot_100.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_hot_100.csv).
   
   
   2.  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R)
@@ -58,8 +59,10 @@ Run following files in the order indicated.
            # PresortMinRank keeps only songs that were less than this number before ranking begins; helps speed up matrix calculations when dealing with lots of data.
 
   ```
-  
-  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R) should export monthly charts.
+## Output
+1. All selected charts were merged in one file, [Raw_charts/ALL_SONGS.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_SONGS.csv).
+2. Songs ranked [Raw_charts/ALL_SONGS_2016_hot_100_ranked.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_SONGS_2016_hot_100_ranked.csv).
+3. Monthly charts exported based on above criteria to 
   
   
   3. Add songs to Spotify. 
