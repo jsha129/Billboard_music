@@ -29,7 +29,7 @@ Billboard (https://www.billboard.com) and Spotify (https://www.spotify.com/) res
 All files should have following parameters. Change them if necessary. 
 
 Run following files in the order indicated. 
-1. [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
+## 1. [Mining_script_V1.R](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.R)
   
   ```r
   charts <- read.csv("charts.csv")
@@ -38,12 +38,12 @@ Run following files in the order indicated.
   startYear <- 2016
   stopYear <- 2017 
   ```
-  ## Output
+  ### Output
  - 105 weeks mined ([Mining_script_V1.log](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.log)). 
  - Data exported to [Raw_charts/ALL_hot_100.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_hot_100.csv).
   
   
-  2.  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R)
+ ## 2.  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R)
   ```r
   year <- 2016
   month <- 1 # start month for exporting playlists
@@ -59,7 +59,7 @@ Run following files in the order indicated.
            # PresortMinRank keeps only songs that were less than this number before ranking begins; helps speed up matrix calculations when dealing with lots of data.
 
   ```
-## Output
+### Output
 1. All selected charts were merged in one file, [Raw_charts/ALL_SONGS.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_SONGS.csv).
 2. Songs ranked [Raw_charts/ALL_SONGS_2016_hot_100_ranked.csv](https://github.com/jsha129/SpotifyR/blob/master/Raw_charts/ALL_SONGS_2016_hot_100_ranked.csv).
 
@@ -68,7 +68,7 @@ Run following files in the order indicated.
 3. 33 Monthly charts exported based on above criteria to [/Monthly_charts](/Monthly_charts).
   
   
-  3. Add songs to Spotify. 
+## 3. Add songs to Spotify. 
   First, register an app on Spotify Web API to get your client and secret codes. You don't actually have to write an app to do so; you just need those codes to access ID of songs and playlists from the R script. 
   You will also need to get your spotify id, which is easily doable from the spotify App.
   
