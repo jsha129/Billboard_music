@@ -39,6 +39,9 @@ Run following files in the order indicated.
   stopYear <- 2017 
   ```
   
+  **Output:** 105 weeks mined ([Mining_script_V1.log](https://github.com/jsha129/Billboard_music/blob/master/Mining_script_V1.log)). Data exported to [Raw_charts/ALL_hot_100.csv]().
+  
+  
   2.  [Songs_analysis_3.R](https://github.com/jsha129/Billboard_music/blob/master/Songs_analysis_3.R)
   ```r
   year <- 2016
